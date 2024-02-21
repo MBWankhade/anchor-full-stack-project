@@ -17,7 +17,7 @@ const Home = () => {
     const email = localStorage.getItem('email');
     
     if (email) {
-      fetch(`http://localhost:3000/get-coins?email=${email}`)
+      fetch(`https://anchor-full-stack-project.onrender.com/get-coins?email=${email}`)
         .then((res) => res.json())
         .then((data) => setCoins(data.coins))
         .catch((error) => console.error('Error fetching coins:', error));
@@ -27,7 +27,7 @@ const Home = () => {
 
   React.useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:3000/internships")
+    fetch("https://anchor-full-stack-project.onrender.com/internships")
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);
@@ -44,7 +44,7 @@ const Home = () => {
 
   const handleapplyJobs = (e) => {
     if (coins >= 50) {
-      fetch(`http://localhost:3000/update-coins?email=${localStorage.getItem('email')}&coins=${coins-50}`, {
+      fetch(`https://anchor-full-stack-project.onrender.com/update-coins?email=${localStorage.getItem('email')}&coins=${coins-50}`, {
         method: 'POST',
       })
         .then((res) => res.json())

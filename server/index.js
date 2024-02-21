@@ -364,7 +364,7 @@ app.post('/update-coins', async (req, res) => {
     if (email && coins) {
       const updatedProfile = await Profile.findOneAndUpdate(
         { email: email },
-        { $set: { coins: coins } },
+        { $set: { coinsEarned: coins } },
         { new: true }
       );
 

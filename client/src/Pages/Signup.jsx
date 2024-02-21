@@ -17,7 +17,7 @@ const Signup = () => {
 
     try {
       // Assuming your backend endpoint for email verification is /verifyEmail
-      const response = await axios.post('http://localhost:3000/register', { email });
+      const response = await axios.post('https://anchor-full-stack-project.onrender.com/register', { email });
 
       if (response.status === 200) {
         setShowOtpInput(true);
@@ -39,7 +39,7 @@ const Signup = () => {
 
     try {
       // Assuming your backend endpoint for OTP verification is /verifyOtp
-      const response = await axios.post('http://localhost:3000/verify-otp', { email, otp });
+      const response = await axios.post('https://anchor-full-stack-project.onrender.com/verify-otp', { email, otp });
 
       if (response.status === 200) {
         // Handle successful signup

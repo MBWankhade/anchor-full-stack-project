@@ -16,7 +16,7 @@ const Login = () => {
 
     try {
       // Replace with your actual login endpoint
-      const response = await axios.post('http://localhost:3000/login', {
+      const response = await axios.post('https://anchor-full-stack-project.onrender.com/login', {
         email,
         password,
       });
